@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cloudyonehellodotnet 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudyonehellodotnet
+  template:
+    metadata:
+      labels:
+        app: cloudyonehellodotnet 
+    spec:
+      containers:
+        - name: cloudyonehellodotnet 
+          image: heliosdevreg.azurecr.io/cloudyonehellodotnet
+          ports:
+          - containerPort: 80
